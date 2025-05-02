@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación de Horarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleGestion.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo-container">
+                <img src="../logo.png" alt="Logo de la empresa">
+            </div>
+            
+            <div style="flex-grow: 1;"></div>
+            
+            <button class="btn btn-primary">
+                <i class="fas fa-sync-alt"></i>
+                Actualizar Lista
+            </button>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1 class="title">Asignación de Horarios</h1>
+                <div class="search-box">
+                    <input type="text" class="form-control" placeholder="Buscar trabajador..." style="width: 250px;">
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h2 class="panel-title">
+                    <i class="fas fa-users"></i>
+                    Lista de Trabajadores
+                </h2>
+                
+                <table class="workers-table">
+                    <thead>
+                        <tr>
+                            <th>ID Trabajador</th>
+                            <th>Nombre</th>
+                            <th>Horario Actual</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EMP-1001</td>
+                            <td>Juan Pérez</td>
+                            <td>08:00 - 16:00 (Matutino)</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-edit"></i> Asignar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EMP-1002</td>
+                            <td>María García</td>
+                            <td>16:00 - 00:00 (Vespertino)</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-edit"></i> Asignar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EMP-1003</td>
+                            <td>Carlos López</td>
+                            <td>00:00 - 08:00 (Nocturno)</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-edit"></i> Asignar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EMP-1004</td>
+                            <td>Ana Martínez</td>
+                            <td>08:00 - 16:00 (Matutino)</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-edit"></i> Asignar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="panel">
+                <h2 class="panel-title">
+                    <i class="fas fa-user-clock"></i>
+                    Asignar Nuevo Horario
+                </h2>
+                
+                <div class="schedule-container">
+                    <div class="schedule-info">
+                        <p><strong>Trabajador seleccionado:</strong> <span id="selected-worker">Ninguno</span></p>
+                        <p><strong>Horario actual:</strong> <span id="current-schedule">No asignado</span></p>
+                    </div>
+                    
+                    <div class="assign-form">
+                        <div class="form-group">
+                            <label>Seleccionar horario:</label>
+                            <div class="time-slots">
+                                <div class="time-slot">08:00 - 16:00 (Matutino)</div>
+                                <div class="time-slot">16:00 - 00:00 (Vespertino)</div>
+                                <div class="time-slot">00:00 - 08:00 (Nocturno)</div>
+                                <div class="time-slot">08:00 - 20:00 (Fin de semana)</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary" style="margin-top: 20px;">
+                            <i class="fas fa-save"></i> Guardar Asignación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="asignacion.js"></script>
+
+</body>
+</html>

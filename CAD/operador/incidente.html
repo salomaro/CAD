@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro del incidente</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styleOperador.css">
+</head>
+<body>
+    <div class="blue-bar">
+        <img src="logo.png" alt="Logo" class="logo">
+        REGISTRO DE INCIDENTE
+    </div>
+    
+    <!-- Panel izquierdo con mapa interactivo -->
+    <div class="map-panel">
+        <h3>Ubicación del Incidente</h3>
+        <div id="map"></div>
+        <div class="search-box">
+            <input type="text" id="address-input" placeholder="Buscar ubicación...">
+            <button id="search-button">Buscar</button>
+        </div>
+        <div class="form-group">
+            <label for="coordenadas">Coordenadas:</label>
+            <input type="text" id="coordenadas" name="coordenadas" readonly>
+        </div>
+    </div>
+    
+    <div class="form-panel">
+        <form action="incidente.php" method="post" onsubmit="return validarFormulario()">
+        <div class="form-group">
+                <label for="paso">¿Qué pasó?:</label>
+                <input type="text" id="paso" name="paso" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="tipo_auxilio">Tipo de auxilio:</label>
+                <select id="tipo_auxilio" name="tipo_auxilio" required>
+                    <option value="">Seleccione un tipo</option>
+                    <option value="medico">Médico</option>
+                    <option value="proteccion_civil">Protección Civil</option>
+                    <option value="seguridad">Seguridad</option>
+                    <option value="servicios_publicos">Servicios Públicos</option>
+                    <option value="otros">Otros servicios</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="personas_involucradas">Número de personas involucradas:</label>
+                <input type="number" id="personas_involucradas" name="personas_involucradas" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="numero">Número celular:</label>
+                <input type="text" id="numero" name="numero" required>
+            </div>
+            
+                <div class="form-group">
+                <label for="clasificacion">Clasificación de la llamada:</label>
+                <select id="clasificacion" name="clasificacion" required>
+                    <option value="">Seleccione un tipo</option>
+                    <option value="broma">Broma</option>
+                    <option value="emergencia_real">Emergencia Real</option>
+                    <option value="tty">TTY</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="prioridad">Prioridad:</label>
+                <select id="prioridad" name="prioridad" required>
+                    <option value="">Seleccione la prioridad</option>
+                    <option value="grave">Grave</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+            </div>
+            <input type="hidden" id="coordenadas" name="coordenadas" value="">
+
+            <button type="submit" class="submit-btn">ENVIAR REPORTE</button>
+        </form>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Nominatim para geocodificación -->
+    <script src="mapaOperador.js"></script>
+
+
+</body>
+</html>

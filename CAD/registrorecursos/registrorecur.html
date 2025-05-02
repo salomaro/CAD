@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro del incidente</title>
+    <link rel="stylesheet" href="styleRecursos.css">
+</head>
+<body>
+    <div class="blue-bar">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        Registro de recursos 
+    </div>
+    
+    <div class="form-container">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="insumos">Insumos:</label>
+                <input type="text" id="insumos" name="insumos" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="tipo_auxilio">Vehiculos:</label>
+                <select id="vehiculos" name="vehiculos" required>
+                    <option value="">Seleccione cuantos vehiculos</option>
+                    <option value="uno">1</option>
+                    <option value="dos"> 2</option>
+                    <option value="tres">3 </option>
+                    <option value="cuatro">4 </option>
+                    <option value="cinco">5 </option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="personal">Personal</label>
+                <input type="number" id="personal" name="personal" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Estatus">Estatus</label>
+                <select id="estT" name="estatus" required>
+                    <option value="">Seleccione</option>
+                    <option value="medico">Disponible</option>
+                    <option value="mecanico">En Emergencia</option>
+                    <option value="seguridad">No disponible</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="submit-btn">ENVIAR </button>
+        </form>
+    </div>
+</body>
+</html>

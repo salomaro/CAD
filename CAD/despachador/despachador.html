@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Emergencias</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styleDespachador.css">
+</head>
+<body>
+    <header class="header">
+        <img src="../logo.png" alt="Logo" class="logo">
+        <h1 class="header-title">Centro de Operaciones de Emergencia</h1>
+    </header>
+
+    <aside class="sidebar">
+        <h2 class="section-title">
+            <i class="fas fa-file-alt"></i>
+            Guías y Protocolos
+        </h2>
+        <ul class="protocol-list">
+            <li class="protocol-item">
+                <a href="/protocolo2.pdf" class="protocol-link" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                    Guía Primeros Auxilios
+                </a>
+            </li>
+            <li class="protocol-item">
+                <a href="protocolo3.pdf" class="protocol-link" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                    Procedimiento Incendios
+                </a>
+            </li>
+        </ul>
+
+        <h2 class="section-title">
+            <i class="fas fa-users-cog"></i>
+            Asignar Recursos
+        </h2>
+        <div class="resource-selector">
+            <div class="resource-option">
+                <div class="resource-icon policia">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span>Policía</span>
+            </div>
+            <div class="resource-option">
+                <div class="resource-icon bomberos">
+                    <i class="fas fa-fire-extinguisher"></i>
+                </div>
+                <span>Bomberos</span>
+            </div>
+            <div class="resource-option">
+                <div class="resource-icon seguridad">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <span>Seguridad</span>
+            </div>
+            <div class="resource-option">
+                <div class="resource-icon medicos">
+                    <i class="fas fa-ambulance"></i>
+                </div>
+                <span>Equipo Médico</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section class="map-container">
+            <div class="map-header">
+                <h2 class="section-title">
+                    <i class="fas fa-map-marked-alt"></i>
+                    Mapa de Situación
+                </h2>
+            </div>
+
+            <div id="map"></div>
+
+            <div class="map-search">
+                <input type="text" id="address-input" placeholder="Buscar ubicación...">
+                <button id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="coordinates">
+                <label for="coordenadas">Coordenadas:</label>
+                <input type="text" id="coordenadas" name="coordenadas" readonly>
+            </div>
+        </section>
+
+        <section class="assigned-resources">
+            <h2 class="section-title">
+                <i class="fas fa-list-check"></i>
+                Recursos Asignados
+            </h2>
+            <div class="resource-card">
+                <i class="fas fa-shield-alt" style="color: #2c3e50;"></i>
+                <span>Policía - Unidad 12</span>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-fire-extinguisher" style="color: #e74c3c;"></i>
+                <span>Bomberos - Carro 5</span>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-user-shield" style="color: #f39c12;"></i>
+                <span>Seguridad - Equipo 3</span>
+            </div>
+        </section>
+
+        <section class="chat-container">
+            <div class="chat-header">
+                <i class="fas fa-comments"></i>
+                Chat de Coordinación
+            </div>
+            <div class="chat-messages">
+                <div class="message received">
+                    Equipo médico en camino 
+                </div>
+                <div class="message sent">
+                    Recibido, procedan con protocolo 4
+                </div>
+                <div class="message received">
+                    Necesitamos refuerzos en zona norte
+                </div>
+                <div class="message sent">
+                    Enviando unidad policial 7
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Escribe un mensaje...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="mapa.js" defer></script>
+</body>
+</html>
